@@ -1,5 +1,7 @@
 # Node.js/Express.js JWT Authentication API
 
+![Auth Image](https://www.freepik.com/free-vector/neon-landing-page-with-smartphone_5891190.htm#fromView=keyword&page=14&position=31&uuid=b29702bd-ace7-4c4e-b36a-b52c40c1bf84&query=User+Authentication+System)
+
 This is a robust RESTful authentication system built with Node.js, Express.js, MongoDB, and JSON Web Tokens (JWT). It includes features like:
 
 * User Registration
