@@ -2,10 +2,7 @@ const express = require("express");
 const { body } = require("express-validator");
 const router = express.Router();
 
-const {
-  register,
- 
-} = require("../controllers/auth");
+const { register, login } = require("../controllers/auth");
 
 // POST http://localhost:5000/api/auth/register
 router.post(
@@ -18,7 +15,14 @@ router.post(
   register
 );
 
-// router.post("/login", login);
+router.post(
+  "/login",
+  [
+    body("email", "Please include a valid email").isEmail(),
+    body("password", "Password is required").exists(),
+  ],
+  login
+);
 // router.post("/forgot-password", forgotPassword);
 // router.post("/reset-password/:token", resetPassword);
 // router.post("/logout", logout);

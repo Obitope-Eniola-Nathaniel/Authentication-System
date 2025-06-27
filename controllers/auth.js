@@ -26,9 +26,36 @@ exports.register = async (req, res) => {
     user = new User({ name, email, password: hashedPassword });
     await user.save();
 
+    // User registration Successful
+    res.status(201).json({ msg: "Registration successful, please log in" });
+  } catch (err) {
+    console.error(err.message);
+  }
+};
+
+
+exports.login = async (req, res) => {
+  // Validate input
+  const errors = validationResult(req);
+  if (!errors.isEmpty())
+    return res.status(400).json({ errors: errors.array() });
+
+  const { email, password } = req.body;
+
+  try {
+    // Check if user exists
+    const user = await User.findOne({ email });
+    if (!user) return res.status(400).json({ msg: "Invalid credentials" });
+
+    // Compare password
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) return res.status(400).json({ msg: "Invalid credentials" });
+
+    // Create and send JWT
+    const payload = { user: { id: user.id } };
+
     // Return JWT
     // Return the user.id inside the token for later identification.
-    const payload = { user: { id: user.id } };
     jwt.sign(
       payload,
       process.env.JWT_SECRET,
@@ -40,6 +67,6 @@ exports.register = async (req, res) => {
     );
   } catch (err) {
     console.error(err.message);
+    res.status(500).send("Server error");
   }
 };
-
