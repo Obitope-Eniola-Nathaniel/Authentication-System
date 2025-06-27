@@ -20,6 +20,12 @@ app.use(express.json());
 
 app.use("/api/auth", authRoutes);
 
+
+const swaggerUi = require('swagger-ui-express');
+const swaggerSpec = require('./docs/swagger');
+
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
+
 // Define port from environment variable or fallback to 5000
 const PORT = process.env.PORT || 5000;
 
