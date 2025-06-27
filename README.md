@@ -12,7 +12,7 @@ This is a robust RESTful authentication system built with Node.js, Express.js, M
 
 ---
 
-## 📆 Tech Stack
+## Tech Stack
 
 * Node.js
 * Express.js
@@ -25,7 +25,7 @@ This is a robust RESTful authentication system built with Node.js, Express.js, M
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### 1. Clone the Repo
 
@@ -72,7 +72,7 @@ npm start
 
 ---
 
-## 📥 API Endpoints
+## API Endpoints
 
 | Method | Route                             | Description           |
 | ------ | --------------------------------- | --------------------- |
@@ -120,7 +120,7 @@ basic-authentication/
 
 ---
 
-## 📧 Reset Password Flow
+## Reset Password Flow
 
 1. User sends email to `/forgot-password`
 2. Receives reset link with token
@@ -128,6 +128,6 @@ basic-authentication/
 
 ---
 
-## 📃 License
+## License
 
 This project is open-source and free to use under the MIT License.
