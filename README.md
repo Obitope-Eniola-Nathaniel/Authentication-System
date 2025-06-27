@@ -78,10 +78,8 @@ npm start
 | ------ | --------------------------------- | --------------------- |
 | POST   | `/api/auth/register`              | Register a new user   |
 | POST   | `/api/auth/login`                 | Login user            |
-| POST   | `/api/auth/logout`                | Logout user           |
 | POST   | `/api/auth/forgot-password`       | Send reset email      |
 | POST   | `/api/auth/reset-password/:token` | Reset password        |
-| GET    | `/api/auth/me`                   | Get current user info |
 ---
 
 ## API Docs (Swagger)
