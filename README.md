@@ -6,7 +6,6 @@ This is a robust RESTful authentication system built with Node.js, Express.js, M
 * Login
 * Forgot Password
 * Password Reset
-* Secure Logout
 * Token-based Authentication
 * Swagger API Documentation
 
